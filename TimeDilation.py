@@ -174,18 +174,21 @@ def graph(speedratio):
     ratio = timeDilation.gettimeratio()
     xcoordinate = []
     ycoordinate = []
-    for time in range (0, 80+1):
-        xresult = 0.1*time
+    Setting = st.Settings()
+    doubleloop = Setting.loops * 2
+    for time in range (0, doubleloop+1):
+        xresult = Setting.interval *time
         yresult = xresult*ratio
         xcoordinate.append(xresult)
         ycoordinate.append(yresult)
+    max_y = round(ycoordinate[-1])
 
-    plt.scatter(xcoordinate,ycoordinate,cmap = plt.cm.Blues,s =100)
+    plt.scatter(xcoordinate,ycoordinate,cmap = plt.cm.Blues,s =50)
     plt.tick_params(axis='both',labelsize=15)
     plt.xlabel("Actual time",fontsize = 14)
     plt.title ("Time Dilation time comparison", fontsize = 20)
     plt.ylabel("Time within moving ship",fontsize = 14)
-    plt.axis([0,8,0,8])
+    plt.axis([0,8,0,max_y])
     plt.show()
 
 
