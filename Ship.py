@@ -9,7 +9,6 @@ class Ship(Sprite):
 
         super(Ship,self).__init__()
 
-        self.ai_Settings = settings
         # load the ship image and get its rect.
         #sprite property of http://millionthvector.blogspot.de
         self.image = pygame.image.load('C:\\untitled\\First work\\Time dilation\\fighterspr1.png')

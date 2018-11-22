@@ -8,6 +8,7 @@ class Light(Sprite):
         super(Light,self).__init__()
         self.screen = screen
 
+        #light image derived from capcom fighting games
         #initializing light
         self.image = pygame.image.load('C:\\untitled\\First work\\Time dilation\\light.png')
         self.rect = self.image.get_rect()
