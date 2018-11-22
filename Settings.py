@@ -26,6 +26,7 @@ class Settings():
         self.ship2location = 150
         self.DefaultHorizontalSpeed = 10
         self.maxHorizontalMovement = 400
+        self.shiptimelimit = 8
 
         #light settings
         self.baseSpeed = float(10)

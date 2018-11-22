@@ -20,7 +20,7 @@ def run_simulation(speedratio):
     text = []
     run_once = 0
     temporary_time = 0
-
+    rect_limit = 144
     #initializing pygame and setting values
     pygame.init()
     Setting = st.Settings()
@@ -80,9 +80,9 @@ def run_simulation(speedratio):
         cycle += 1
         if cycle%Setting.loops == 0 and cycle != 0:
             speed1 = -speed1
-        if secondLight.temporary_y <= 144 and run_once == 0:
+        if secondLight.temporary_y <= rect_limit and run_once == 0:
             speed2 = -speed2
-            positionalRecorrection = 144 + (secondLight.rect.y - 144)
+            positionalRecorrection = rect_limit + (secondLight.rect.y - rect_limit)
             secondLight.sety(positionalRecorrection)
             run_once = 1
 
@@ -102,7 +102,7 @@ def run_simulation(speedratio):
         time.sleep(Setting.interval)
 
         #ending the animation loop if time within ship is greater than given threshold
-        if ship_time_elapsed > 8:
+        if ship_time_elapsed > Setting.shiptimelimit:
             break
     #updating time data and finalizing screen
     ship_time_elapsed = sf.round_half_up(8,6)
